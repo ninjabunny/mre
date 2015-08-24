@@ -39,9 +39,11 @@ gulp.task('server', function(){
 });
 
 //minify css
-gulp.task('minify-css', function() {
-  return gulp.src('styles/*.css')
-    .pipe(minifyCss())
-    .pipe(gulp.dest('dist/styles'));
+gulp.task('minify-css', 
+	function() {
+		return gulp.src('styles/*.css')
+		.pipe(minifyCss())
+		.pipe(gulp.dest('dist/styles'),
+	browserSync.reload());
 });
 
