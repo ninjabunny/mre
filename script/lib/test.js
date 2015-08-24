@@ -1,4 +1,5 @@
-window.alert("hi");
+window.alert("its working!!!");
+
 window.dome = (function () {
     function Dome (els) {
          

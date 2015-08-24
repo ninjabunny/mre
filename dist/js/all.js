@@ -1,3 +1,5 @@
+window.alert("its working!!!");
+
 window.dome = (function () {
     function Dome (els) {
          
@@ -5,7 +7,8 @@ window.dome = (function () {
      
     var dome = {
         get: function (selector) {
-         
+        	console.log("hi");
+        	console.log("wasdasd");
         }   
     };
      

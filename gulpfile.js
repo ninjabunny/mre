@@ -9,23 +9,26 @@ var gulp = require('gulp'),
 
 // Jasmine Testing
 gulp.task('test', function(){
+	console.log((new Date).toLocaleTimeString() + " Tests Excecuted!");
 	return gulp.src('spec/test.js')
 		.pipe(jasmine());
 });
 
 // Linting and minifying
 gulp.task('js-liniting-compliling', function(){
-	return gulp.src('script/lib/*.js')
-	.pipe(jshint())
-	.pipe(jshint.reporter('default'))
-	.pipe(concat('all.js'))
-	.pipe(gulp.dest('dist/js'))
-	.pipe(rename('all.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('dist/js'));
+		console.log((new Date).toLocaleTimeString() + " ReMinified JS!");
+		return gulp.src('script/lib/*.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'))
+		.pipe(concat('all.js'))
+		.pipe(gulp.dest('dist/js'))
+		.pipe(rename('all.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('dist/js'), 
+	browserSync.reload());
 });
 
-gulp.task('js-watch', ['js-liniting-compliling'], browserSync.reload());
+gulp.task('js-watch', ['js-liniting-compliling']);
 
 gulp.task('server', function(){
 	browserSync.init({
@@ -33,14 +36,14 @@ gulp.task('server', function(){
 			baseDir: "./"
 		}
 	});
-	// gulp.watch("js/*.js", ['js-watch']);
-	gulp.watch("js/lib/*.js", ['js-watch']);
+	gulp.watch("script/lib/*.js", ['js-watch']);
 	gulp.watch("styles/*.css", ['minify-css']);
 });
 
 //minify css
 gulp.task('minify-css', 
 	function() {
+		console.log((new Date).toLocaleTimeString() + " ReMinified CSS!");
 		return gulp.src('styles/*.css')
 		.pipe(minifyCss())
 		.pipe(gulp.dest('dist/styles'),
