@@ -8,7 +8,9 @@ Def Javascript Library: An independent module wrapped in an object that does not
 TODO:
 
 ~~* [How to Create a Library in Javasscript](http://checkman.io/blog/creating-a-javascript-library/)~~
+
 * [Test-Driven-Development for Javascript](http://www.letscodejavascript.com/)
+
 ~~* Build Proof of Concept Library~~
 * Add Jasmine to POC Library for TDD
 * Research Geolocation for HTML/JS
