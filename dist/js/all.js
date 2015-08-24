@@ -1,16 +1,18 @@
-window.alert("its working!!!");
+(function(window){
+	'use strict';
+	function define_library(){
+		var Library = {};
+		var name = "Timmy";
+		Library.greet = function(){
+			console.log("hello, this is " + name + ".");
+		};
+		return Library;
+	}
 
-window.dome = (function () {
-    function Dome (els) {
-         
-    }
-     
-    var dome = {
-        get: function (selector) {
-        	console.log("hi");
-        	console.log("wasdasd");
-        }   
-    };
-     
-    return dome;
-}());
+	if(typeof(Library) === "undefined"){
+		window.Library = define_library();
+	} else {
+		console.log("Library is alaredy define.");
+	}
+})(window);
+Library.greet();

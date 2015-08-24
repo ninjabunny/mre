@@ -15,7 +15,8 @@ gulp.task('test', function(){
 });
 
 // Linting and minifying
-gulp.task('js-liniting-compliling', function(){
+gulp.task('js-liniting-compliling', 
+	function(){
 		console.log((new Date).toLocaleTimeString() + " ReMinified JS!");
 		return gulp.src('script/lib/*.js')
 		.pipe(jshint())
