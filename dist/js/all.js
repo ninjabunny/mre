@@ -15,4 +15,15 @@
 		console.log("Library is alaredy define.");
 	}
 })(window);
+(function($){
+	'use strict';
+	$('.draggable').draggable();
+
+	$('.resizable').resizable({
+	    aspectRatio: true,
+	    handles: 'ne, se, sw, nw'
+	});
+
+	// $('.resizable').parent().rotatable();
+})($);
 Library.greet();
